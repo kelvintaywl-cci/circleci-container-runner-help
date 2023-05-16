@@ -1,0 +1,15 @@
+apiVersion: troubleshoot.sh/v1beta2
+kind: SupportBundle
+metadata:
+  name: circleci-container-runner
+spec:
+  collectors:
+    - logs:
+        selector:
+          - app=container-agent
+        name: container-agent
+        limits:
+          # last 3 days
+          maxAge: 72h
+          maxLines: 1000
+  analyzers: []
