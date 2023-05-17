@@ -12,4 +12,9 @@ spec:
           # last 3 days
           maxAge: 72h
           maxLines: 1000
+    - logs:
+        selector:
+          - app.kubernetes.io/name=circleci-task-agent
+          - app.kubernetes.io/managed-by=circleci-container-agent
+        name: container-task
   analyzers: []
