@@ -17,4 +17,11 @@ spec:
           - app.kubernetes.io/name=circleci-task-agent
           - app.kubernetes.io/managed-by=circleci-container-agent
         name: container-task
+    - http:
+        collectorName: runnerAPI
+        get:
+          url: https://runner.circleci.com/api/v2/runner?namespace=foobar
+          insecureSkipVerify: true
+          headers:
+            Circle-Token: "dummy"
   analyzers: []
